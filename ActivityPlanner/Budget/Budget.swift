@@ -16,8 +16,10 @@ struct Budget: View {
     
     
     var body: some View {
+        NavigationView {
         
         BarChartView(data: ChartData(values: [("Food",getPercentages()[0]), ("Shopping",getPercentages()[1]), ("Gas",getPercentages()[2]), ("Activities",getPercentages()[3])]), title: "Budget", legend: "Trip Cost Avg: \(String(getPercentages()[4])) (\(userData.currency))",  form: ChartForm.medium, dropShadow: false, cornerImage : Image(systemName: "cedisign.circle.fill"))
+        }.navigationBarTitle(("Settings"), displayMode: .inline)
 
     }
     

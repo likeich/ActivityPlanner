@@ -18,8 +18,8 @@ struct Main: View {
             
             Budget()
                 .tabItem {
-                    Image(systemName: "chart.pie")
-                    Text("Budget")
+                    Image(systemName: "chart.bar.fill")
+                    Text("Costs")
                 }
             Settings()
                 .tabItem {
