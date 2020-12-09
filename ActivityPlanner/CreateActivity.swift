@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CreateActivity: View {
     
+    @EnvironmentObject var userData: UserData
     @Environment(\.managedObjectContext) var managedObjectContext
     
     @State private var selectedIndex = 0
@@ -162,20 +163,19 @@ struct CreateActivity: View {
     }
     
     func saveActivity() {
-        print(searchedRecreationAreaList[recreationAreaIndex].id)
         let newActivity = Activity(context: self.managedObjectContext)
         
-        newActivity.title = activityName
-        newActivity.date = activityDate.description
-        newActivity.desc = descriptionText
-        newActivity.recreationAreaID = searchedRecreationAreaList[recreationAreaIndex].id
+        newActivity.title = self.activityName
+        newActivity.date = self.activityDate
+        newActivity.desc = self.descriptionText
+        newActivity.recreationAreaID = searchedRecreationAreaList[recreationAreaIndex].parkCode
         newActivity.activityName = activityList[selectedIndex].name
         
-        newActivity.totalCost = NSNumber(value: totalCost)
-        newActivity.foodCost = NSNumber(value: foodCost)
-        newActivity.gasCost = NSNumber(value: gasCost)
-        newActivity.shoppingCost = NSNumber(value: shoppingCost)
-        newActivity.activityCost = NSNumber(value: activityCost)
+        newActivity.totalCost = NSNumber(value: self.totalCost)
+        newActivity.foodCost = NSNumber(value: self.foodCost)
+        newActivity.gasCost = NSNumber(value: self.gasCost)
+        newActivity.shoppingCost = NSNumber(value: self.shoppingCost)
+        newActivity.activityCost = NSNumber(value: self.activityCost)
         
         do {
             try self.managedObjectContext.save()

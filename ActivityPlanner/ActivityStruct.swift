@@ -12,7 +12,7 @@ struct RecData: Decodable, Hashable {
 }
 
 struct ParkStruct: Decodable, Hashable {
-    var id: String
+    var parkCode: String
     var url: String
     var fullName: String
     var description: String

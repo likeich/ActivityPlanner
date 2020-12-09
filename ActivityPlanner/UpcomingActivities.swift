@@ -9,22 +9,24 @@ import SwiftUI
 
 struct UpcomingActivities: View {
     
-    @FetchRequest(fetchRequest: Activity.upcomingRequest(query: Date().description)) var activities: FetchedResults<Activity>
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(fetchRequest: Activity.allActivitiesFetchRequest()) var activities: FetchedResults<Activity>
     @EnvironmentObject var userData: UserData
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(activities, id: \.self) { activity in
-                    Text(activity.date?.description ?? "No Date!")
-                }
-                
-                if activities.isEmpty {
-                    Text("No Results were Found!")
-                        .font(.title)
+        List {
+            ForEach(activities, id: \.self) { activity in
+                NavigationLink(destination: CDActivityDetails(activity: activity)) {
+                    CDActivityListItem(activity: activity)
                 }
             }
+            
+            if activities.isEmpty {
+                Text("No Results were Found!")
+                    .font(.title)
+            }
         }
+        .navigationBarTitle(Text("Activities"), displayMode: .inline)
     }
 }
 

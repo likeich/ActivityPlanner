@@ -32,13 +32,23 @@ public func searchParks(stateCode: String, activity: String) {
 
 // This is general data used throughout the project. Is observable so views can update.
 final class UserData: ObservableObject {
+    
     public func getParkFromId(id: String) -> ParkStruct {
-        let url = "https://developer.nps.gov/api/v1/parks?parkCode=" + id + "&parkCode=&api_key=" + api_key
-        
+        let url = "https://developer.nps.gov/api/v1/parks?parkCode=" + id + "&api_key=" + api_key
+        print(url)
+        print("The ID: " + id)
         var recData: RecData
         recData = parseJsonFromURL(fullURL: url)
+        
+        if recData.data.isEmpty {
+            print("Returning the first item")
+            return recreationAreaList[0]
+        }
+        
         return recData.data[0]
     }
+    
+    @Published var savedInDatabase =  NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave)
     
     
     /*

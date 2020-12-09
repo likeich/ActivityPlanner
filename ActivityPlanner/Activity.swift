@@ -18,7 +18,7 @@ public class Activity: NSManagedObject, Identifiable {
     @NSManaged public var totalCost: NSNumber?
     @NSManaged public var desc: String?
     @NSManaged public var title: String?
-    @NSManaged public var date: String?
+    @NSManaged public var date: Date?
     @NSManaged public var recreationAreaID: String?
     @NSManaged public var activityName: String?
     
@@ -27,7 +27,7 @@ public class Activity: NSManagedObject, Identifiable {
 
 extension Activity {
     //Gets all of the trip objects in the core data base. Sorted by rating then title.
-    static func allActivityFetchRequest()->NSFetchRequest<Activity> {
+    static func allActivitiesFetchRequest()->NSFetchRequest<Activity> {
         let request: NSFetchRequest<Activity> = Activity.fetchRequest() as! NSFetchRequest<Activity>
         /*
          List the results in alphabetical order with respect to title.
