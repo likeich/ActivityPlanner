@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57047DA22581789E00E9C749 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DA12581789E00E9C749 /* Settings.swift */; };
+		57047DA72581790C00E9C749 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DA52581790C00E9C749 /* Budget.swift */; };
+		57047DAF2581791C00E9C749 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DAB2581791C00E9C749 /* ForgotPassword.swift */; };
+		57047DB02581791C00E9C749 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DAC2581791C00E9C749 /* Login.swift */; };
+		57047DB12581791C00E9C749 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DAD2581791C00E9C749 /* SignUp.swift */; };
+		57047DB22581791C00E9C749 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DAE2581791C00E9C749 /* Main.swift */; };
+		57047DB52581794B00E9C749 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DB42581794B00E9C749 /* Pie.swift */; };
 		F1391DBF2581240800980DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DBE2581240800980DCC /* AppDelegate.swift */; };
 		F1391DC12581240800980DCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DC02581240800980DCC /* SceneDelegate.swift */; };
 		F1391DC32581240800980DCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DC22581240800980DCC /* ContentView.swift */; };
@@ -30,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57047DA12581789E00E9C749 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		57047DA52581790C00E9C749 /* Budget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		57047DAB2581791C00E9C749 /* ForgotPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		57047DAC2581791C00E9C749 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		57047DAD2581791C00E9C749 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		57047DAE2581791C00E9C749 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		57047DB42581794B00E9C749 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		F1391DBB2581240800980DCC /* ActivityPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1391DBE2581240800980DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1391DC02581240800980DCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +79,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57047DA02581788900E9C749 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				57047DA12581789E00E9C749 /* Settings.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		57047DA42581790C00E9C749 /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				57047DA52581790C00E9C749 /* Budget.swift */,
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
+		57047DAA2581791C00E9C749 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				57047DAB2581791C00E9C749 /* ForgotPassword.swift */,
+				57047DAC2581791C00E9C749 /* Login.swift */,
+				57047DAD2581791C00E9C749 /* SignUp.swift */,
+				57047DAE2581791C00E9C749 /* Main.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		F1391DB22581240800980DCC = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +155,7 @@
 				F1391DDB2581245F00980DCC /* UserData.swift */,
 				F1391DE12581249700980DCC /* ActivityStruct.swift */,
 				F1391E082581668F00980DCC /* Activity.swift */,
+				57047DB42581794B00E9C749 /* Pie.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -121,6 +163,9 @@
 		F1391DE82581414500980DCC /* Tab Views */ = {
 			isa = PBXGroup;
 			children = (
+				57047DAA2581791C00E9C749 /* Login */,
+				57047DA42581790C00E9C749 /* Budget */,
+				57047DA02581788900E9C749 /* Settings */,
 				F1391DE92581415000980DCC /* CreateActivity */,
 				F1391E0025814B5400980DCC /* MapView.swift */,
 			);
@@ -212,22 +257,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57047DB02581791C00E9C749 /* Login.swift in Sources */,
 				F1391E092581668F00980DCC /* Activity.swift in Sources */,
 				F1391DEF2581418500980DCC /* CreateActivity.swift in Sources */,
+				57047DB12581791C00E9C749 /* SignUp.swift in Sources */,
 				F1391DDC2581245F00980DCC /* UserData.swift in Sources */,
+				57047DA22581789E00E9C749 /* Settings.swift in Sources */,
 				F1391DBF2581240800980DCC /* AppDelegate.swift in Sources */,
 				F1391DC62581240800980DCC /* ActivityPlanner.xcdatamodeld in Sources */,
 				F1391DF5258142AA00980DCC /* SearchRecreationAreas.swift in Sources */,
 				F1391DC12581240800980DCC /* SceneDelegate.swift in Sources */,
+				57047DB22581791C00E9C749 /* Main.swift in Sources */,
 				F1391DF22581426100980DCC /* Activities.swift in Sources */,
 				F1391E0125814B5400980DCC /* MapView.swift in Sources */,
 				F1391DE22581249700980DCC /* ActivityStruct.swift in Sources */,
 				F1391E0C2581686600980DCC /* UpcomingActivities.swift in Sources */,
 				F1391DFE258144A600980DCC /* ParkDetails.swift in Sources */,
 				F1391DF8258142FA00980DCC /* RecreationAreaList.swift in Sources */,
+				57047DB52581794B00E9C749 /* Pie.swift in Sources */,
+				57047DA72581790C00E9C749 /* Budget.swift in Sources */,
 				F1391DD82581244C00980DCC /* UtilityFunctions.swift in Sources */,
 				F1391DFB2581433100980DCC /* ParkListItem.swift in Sources */,
 				F1391DC32581240800980DCC /* ContentView.swift in Sources */,
+				57047DAF2581791C00E9C749 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +420,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ActivityPlanner/Preview Content\"";
+				DEVELOPMENT_TEAM = 2QJ5D3LQSY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ActivityPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -388,6 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ActivityPlanner/Preview Content\"";
+				DEVELOPMENT_TEAM = 2QJ5D3LQSY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ActivityPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
