@@ -6,58 +6,18 @@
 //
 
 import SwiftUI
-//import SwiftUICharts
+import SwiftUICharts
 
 struct Budget: View {
-    @State var chartData = [("Food",63150), ("Shopping",50900), ("Gas",77550), ("Activities",79600)]
+
     @EnvironmentObject var userData: UserData
+    
+    @FetchRequest(fetchRequest: Activity.allActivityFetchRequest()) var allActivities: FetchedResults<Activity>
+    
     
     var body: some View {
         
-        //        PieChartView(data: [8,23,54,32,12,37,7,23,43] , title: "Budget",legend: "Full screen", form: ChartForm.extraLarge, dropShadow: false)
-        //        BarChartView(data: ChartData(values: chartData), title: "Budget", legend: "Trip (\(userData.currency))",  form: ChartForm.medium, dropShadow: false, cornerImage : Image(systemName: "cedisign.circle.fill"))
-        VStack {
-           
-            //pie chart
-            GeometryReader{g in
-                
-                ZStack{
-                    ForEach(0..<userData.data.count){ i in
-                        DrawShape(center: CGPoint(x: g.frame(in: .global).width/2, y: g.frame(in: .global).height / 2), index: i)
-                    }
-                }
-                
-            }.frame(height: 360)
-            .padding(.top, 40)
-            .clipShape(Circle())
-            .shadow(radius: 10)
-            
-            VStack {
-                ForEach(userData.data){i in
-                    HStack{
-                        Text(i.name)
-                            .frame(width: 100)
-                        
-                        GeometryReader{g in
-                            HStack{
-                                Spacer(minLength: 0)
-                                Rectangle()
-                                    .fill(i.color)
-                                    .frame(width: self.getWidth(width: g.frame(in: .global).width, value: i.percent),height: 10)
-                                Text(String(format: "\(i.percent)", "%.0f"))
-                                    .fontWeight(.bold)
-                                    .padding(.leading, 10)
-                            }//end of hstack
-                        }//end of geometryreader
-                    }//end of hstack
-                    .padding(.top, 18)
-                }
-            }//end of vstack
-            .padding()
-            
-            Spacer()
-        }//end of vstack
-        .edgesIgnoringSafeArea(.top)
+        BarChartView(data: ChartData(values: [("Food",getPercentages()[0]), ("Shopping",getPercentages()[1]), ("Gas",getPercentages()[2]), ("Activities",getPercentages()[3])]), title: "Budget", legend: "Trip Cost Avg: \(String(getPercentages()[4])) (\(userData.currency))",  form: ChartForm.medium, dropShadow: false, cornerImage : Image(systemName: "cedisign.circle.fill"))
 
     }
     
@@ -65,6 +25,27 @@ struct Budget: View {
         let temp = value / 100
         return temp * width
     }
+    
+    func getPercentages() -> [Double]{
+        var gas = 0.0
+        var food = 0.0
+        var shop = 0.0
+        var activ = 0.0
+        var total = 0.0
+        
+        for act in allActivities {
+            gas += Double(truncating: act.gasCost ?? 0)
+            food += Double(truncating: act.foodCost ?? 0)
+            shop += Double(truncating: act.shoppingCost ?? 0)
+            activ += Double(truncating: act.activityCost ?? 0)
+            total += Double(truncating: act.totalCost ?? 10000000)
+        }
+        
+        return [food/total,shop/total, gas/total, activ/total, total/Double(allActivities.count)]
+        
+        
+    }
+
 }
 
 struct DrawShape : View {

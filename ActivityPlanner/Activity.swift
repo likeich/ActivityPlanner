@@ -40,6 +40,8 @@ extension Activity {
         return request
     }
     
+    
+    
     //Used in the search bar in the favorites menu.
     static func favoriteSearchRequest(query: String)->NSFetchRequest<Activity> {
         let request: NSFetchRequest<Activity> = Activity.fetchRequest() as! NSFetchRequest<Activity>

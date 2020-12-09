@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		57047DB12581791C00E9C749 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DAD2581791C00E9C749 /* SignUp.swift */; };
 		57047DB22581791C00E9C749 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DAE2581791C00E9C749 /* Main.swift */; };
 		57047DB52581794B00E9C749 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DB42581794B00E9C749 /* Pie.swift */; };
+		57047DBB258187B100E9C749 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 57047DBA258187B100E9C749 /* SwiftUICharts */; };
+		57047DBE258188C100E9C749 /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DBD258188C100E9C749 /* temp.swift */; };
 		F1391DBF2581240800980DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DBE2581240800980DCC /* AppDelegate.swift */; };
 		F1391DC12581240800980DCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DC02581240800980DCC /* SceneDelegate.swift */; };
 		F1391DC32581240800980DCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DC22581240800980DCC /* ContentView.swift */; };
@@ -44,6 +46,7 @@
 		57047DAD2581791C00E9C749 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		57047DAE2581791C00E9C749 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		57047DB42581794B00E9C749 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		57047DBD258188C100E9C749 /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
 		F1391DBB2581240800980DCC /* ActivityPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1391DBE2581240800980DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1391DC02581240800980DCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57047DBB258187B100E9C749 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				57047DA52581790C00E9C749 /* Budget.swift */,
+				57047DBD258188C100E9C749 /* temp.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -202,6 +207,9 @@
 			dependencies = (
 			);
 			name = ActivityPlanner;
+			packageProductDependencies = (
+				57047DBA258187B100E9C749 /* SwiftUICharts */,
+			);
 			productName = ActivityPlanner;
 			productReference = F1391DBB2581240800980DCC /* ActivityPlanner.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +237,9 @@
 				Base,
 			);
 			mainGroup = F1391DB22581240800980DCC;
+			packageReferences = (
+				57047DB9258187B100E9C749 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = F1391DBC2581240800980DCC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -268,6 +279,7 @@
 				F1391DF5258142AA00980DCC /* SearchRecreationAreas.swift in Sources */,
 				F1391DC12581240800980DCC /* SceneDelegate.swift in Sources */,
 				57047DB22581791C00E9C749 /* Main.swift in Sources */,
+				57047DBE258188C100E9C749 /* temp.swift in Sources */,
 				F1391DF22581426100980DCC /* Activities.swift in Sources */,
 				F1391E0125814B5400980DCC /* MapView.swift in Sources */,
 				F1391DE22581249700980DCC /* ActivityStruct.swift in Sources */,
@@ -477,6 +489,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		57047DB9258187B100E9C749 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		57047DBA258187B100E9C749 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57047DB9258187B100E9C749 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F1391DC42581240800980DCC /* ActivityPlanner.xcdatamodeld */ = {
