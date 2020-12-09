@@ -34,25 +34,35 @@ extension Activity {
          */
         request.sortDescriptors = [
             //Primary sort key: rating
-            NSSortDescriptor(key: "date", ascending: true)
+            NSSortDescriptor(key: "date", ascending: false),
+            NSSortDescriptor(key: "title", ascending: false)
         ]
         
         return request
     }
     
-    //Used in the search bar in the favorites menu.
-    static func favoriteSearchRequest(query: String)->NSFetchRequest<Activity> {
+    static func upcomingRequest(query: Date)->NSFetchRequest<Activity> {
         let request: NSFetchRequest<Activity> = Activity.fetchRequest() as! NSFetchRequest<Activity>
         
-        request.predicate = NSPredicate(format: "title CONTAINS[c] %@ OR overview CONTAINS[c] %@ OR genres CONTAINS[c] %@ OR releaseDate CONTAINS[c] %@ OR director CONTAINS[c] %@ OR topActors CONTAINS[c] %@ OR mpaaRating CONTAINS[c] %@", query)
+        request.predicate = NSPredicate(format: "date >= %@", query as NSDate)
+        request.sortDescriptors = [
+            //Primary sort key: rating
+            NSSortDescriptor(key: "date", ascending: false),
+            NSSortDescriptor(key: "title", ascending: false)
+        ]
         
         return request
     }
     
-    static func upcomingRequest(query: String)->NSFetchRequest<Activity> {
+    static func passedRequest(query: Date)->NSFetchRequest<Activity> {
         let request: NSFetchRequest<Activity> = Activity.fetchRequest() as! NSFetchRequest<Activity>
         
-        request.predicate = NSPredicate(format: "date >= %@", query)
+        request.predicate = NSPredicate(format: "date < %@", query as NSDate)
+        request.sortDescriptors = [
+            //Primary sort key: rating
+            NSSortDescriptor(key: "date", ascending: false),
+            NSSortDescriptor(key: "title", ascending: false)
+        ]
         
         return request
     }

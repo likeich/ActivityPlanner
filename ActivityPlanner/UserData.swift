@@ -28,6 +28,14 @@ public func searchParks(stateCode: String, activity: String) {
     searchedRecreationAreaList = recData.data
 }
 
+public func getDateFormatter() -> DateFormatter {
+    // Create an instance of DateFormatter
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "MM-dd-yyyy"
+    
+    return dateFormatter
+}
+
 
 
 // This is general data used throughout the project. Is observable so views can update.

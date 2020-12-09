@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct CDActivityListItem: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var userData: UserData
     let activity: Activity
     
     var body: some View {
         HStack {
-            Text(activity.title ?? "No Name")
+            getImageFromUrl(url: userData.getParkFromId(id: activity.recreationAreaID ?? "").images[0].url, defaultFilename: "Default")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 100)
             
-            VStack {
+            VStack(alignment: .leading) {
+                Text(activity.title ?? "No Name")
                 Text(activity.activityName ?? "")
-                Text(activity.date?.description ?? "")
+                Text(getDateFormatter().string(from: activity.date ?? Date()) )
             }
         }
     }

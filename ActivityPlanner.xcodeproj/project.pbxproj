@@ -26,7 +26,7 @@
 		F1391DFE258144A600980DCC /* ParkDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DFD258144A600980DCC /* ParkDetails.swift */; };
 		F1391E0125814B5400980DCC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E0025814B5400980DCC /* MapView.swift */; };
 		F1391E092581668F00980DCC /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E082581668F00980DCC /* Activity.swift */; };
-		F1391E0C2581686600980DCC /* UpcomingActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E0B2581686600980DCC /* UpcomingActivities.swift */; };
+		F1391E0C2581686600980DCC /* ActivitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E0B2581686600980DCC /* ActivitiesList.swift */; };
 		F1391E1525817F7400980DCC /* CDActivityListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E1425817F7400980DCC /* CDActivityListItem.swift */; };
 		F1391E182581808F00980DCC /* CDActivityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E172581808F00980DCC /* CDActivityDetails.swift */; };
 /* End PBXBuildFile section */
@@ -53,7 +53,7 @@
 		F1391DFD258144A600980DCC /* ParkDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDetails.swift; sourceTree = "<group>"; };
 		F1391E0025814B5400980DCC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		F1391E082581668F00980DCC /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		F1391E0B2581686600980DCC /* UpcomingActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingActivities.swift; sourceTree = "<group>"; };
+		F1391E0B2581686600980DCC /* ActivitiesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesList.swift; sourceTree = "<group>"; };
 		F1391E1425817F7400980DCC /* CDActivityListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDActivityListItem.swift; sourceTree = "<group>"; };
 		F1391E172581808F00980DCC /* CDActivityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDActivityDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +131,7 @@
 		F1391DE92581415000980DCC /* CreateActivity */ = {
 			isa = PBXGroup;
 			children = (
+				F1391DF12581426100980DCC /* Activities.swift */,
 				F1391E1325817F5800980DCC /* OfflineFiles */,
 				F1391E0E25817C9B00980DCC /* OnlineFiles */,
 			);
@@ -143,7 +144,6 @@
 				F1391DFA2581433100980DCC /* ParkListItem.swift */,
 				F1391DFD258144A600980DCC /* ParkDetails.swift */,
 				F1391DEE2581418500980DCC /* CreateActivity.swift */,
-				F1391DF12581426100980DCC /* Activities.swift */,
 				F1391DF4258142AA00980DCC /* SearchRecreationAreas.swift */,
 				F1391DF7258142FA00980DCC /* RecreationAreaList.swift */,
 			);
@@ -180,7 +180,7 @@
 		F1391E1325817F5800980DCC /* OfflineFiles */ = {
 			isa = PBXGroup;
 			children = (
-				F1391E0B2581686600980DCC /* UpcomingActivities.swift */,
+				F1391E0B2581686600980DCC /* ActivitiesList.swift */,
 				F1391E1425817F7400980DCC /* CDActivityListItem.swift */,
 				F1391E172581808F00980DCC /* CDActivityDetails.swift */,
 			);
@@ -269,7 +269,7 @@
 				F1391DF22581426100980DCC /* Activities.swift in Sources */,
 				F1391E0125814B5400980DCC /* MapView.swift in Sources */,
 				F1391DE22581249700980DCC /* ActivityStruct.swift in Sources */,
-				F1391E0C2581686600980DCC /* UpcomingActivities.swift in Sources */,
+				F1391E0C2581686600980DCC /* ActivitiesList.swift in Sources */,
 				F1391E182581808F00980DCC /* CDActivityDetails.swift in Sources */,
 				F1391DFE258144A600980DCC /* ParkDetails.swift in Sources */,
 				F1391DF8258142FA00980DCC /* RecreationAreaList.swift in Sources */,

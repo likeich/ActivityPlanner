@@ -13,6 +13,9 @@ struct CDActivityDetails: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var userData: UserData
     
+    
+
+    
     var body: some View {
         Form {
             Section(header: Text("Activity Type")) {
@@ -24,7 +27,7 @@ struct CDActivityDetails: View {
             }
             
             Section(header: Text("Date")) {
-                Text(activity.date?.description ?? "Great work, kid")
+                Text(getDateFormatter().string(from: activity.date ?? Date()))
             }
             
             Section(header: Text("Recreation Area Information")) {
