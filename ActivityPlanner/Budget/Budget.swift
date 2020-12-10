@@ -103,14 +103,15 @@ struct Budget: View {
             //            print(act.shoppingCost!)
         }
         
-        //        return [food/Double(allActivities.count),shop/Double(allActivities.count), gas/Double(allActivities.count), activ/Double(allActivities.count), total/Double(allActivities.count)]
         
+        //        return [food/Double(allActivities.count),shop/Double(allActivities.count), gas/Double(allActivities.count), activ/Double(allActivities.count), total/Double(allActivities.count)]
+        if total != 0 {
         userData.data[0].percent = CGFloat((food/total) * 100)
         userData.data[1].percent = CGFloat((shop/total) * 100)
         userData.data[2].percent = CGFloat((gas/total) * 100)
         userData.data[3].percent = CGFloat((activ/total) * 100)
-        
-        print("here")
+        }
+
         
 //        return [food/total,shop/total, gas/total, activ/total, total]
       
