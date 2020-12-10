@@ -124,6 +124,7 @@ struct DrawShape : View {
     var center : CGPoint
     var index : Int
     var body: some View {
+        //create a path shape for current part of pie chart using angles and radius
         Path{path in
             
             path.move(to: self.center)
@@ -131,7 +132,7 @@ struct DrawShape : View {
             
         }.fill(userData.data[index].color)
     }
-    
+    //find start degree of path
     func from()->Double{
         var temp : Double = 0
         
@@ -145,7 +146,7 @@ struct DrawShape : View {
             return temp
         }
     }
-    
+    //find end degree of path
     func to()->Double{
         
         var temp : Double = 0
