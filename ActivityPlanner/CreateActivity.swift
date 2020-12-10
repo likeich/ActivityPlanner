@@ -20,8 +20,12 @@ struct CreateActivity: View {
     
     @State private var activityName = ""
     
-    
     @State private var activityDate = Date()
+    
+    @State private var showImagePicker = false
+    @State private var photoImageData: Data? = nil
+    @State private var photoTakeOrPickIndex = 1
+    var photoTakeOrPickChoices = ["Camera", "Photo Library"]
    
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -97,6 +101,31 @@ struct CreateActivity: View {
                     }
                 }
                 
+                Section(header: Text("Add Your Own Photo")) {
+                    VStack {
+                        Picker("Take or Pick Photo", selection: $photoTakeOrPickIndex) {
+                            ForEach(0 ..< photoTakeOrPickChoices.count, id: \.self) {
+                                Text(self.photoTakeOrPickChoices[$0])
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .padding()
+                       
+                        Button(action: {
+                            self.showImagePicker = true
+                        }) {
+                            Text("Get Photo")
+                                .padding()
+                        }
+                        
+                        if photoImageData != nil {
+                            getImageFromBinaryData(binaryData: photoImageData, defaultFilename: "Default")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }
+                    }   // End of VStack
+                }
+                
                 Section(header: Text("Name your activity")) {
                     TextField("Activity Name Here", text: $activityName)
                 }
@@ -160,6 +189,11 @@ struct CreateActivity: View {
         }) {
             Text("Save")
         })
+        .sheet(isPresented: self.$showImagePicker) {
+            PhotoCaptureView(showImagePicker: self.$showImagePicker,
+                             photoImageData: self.$photoImageData,
+                             cameraOrLibrary: self.photoTakeOrPickChoices[self.photoTakeOrPickIndex])
+        }
     }
     
     func saveActivity() {
@@ -176,6 +210,7 @@ struct CreateActivity: View {
         newActivity.gasCost = NSNumber(value: self.gasCost)
         newActivity.shoppingCost = NSNumber(value: self.shoppingCost)
         newActivity.activityCost = NSNumber(value: self.activityCost)
+        newActivity.picture = photoImageData
         
         do {
             try self.managedObjectContext.save()

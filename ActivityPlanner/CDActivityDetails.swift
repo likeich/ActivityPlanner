@@ -36,6 +36,14 @@ struct CDActivityDetails: View {
                 }
             }
             
+            if activity.picture != nil {
+                Section(header: Text("Your Photo")) {
+                    getImageFromBinaryData(binaryData: activity.picture, defaultFilename: "Default")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            }
+            
             Section(header: Text("Costs")) {
                 VStack {
                     Text("Total Cost: $" + (activity.totalCost?.stringValue ?? "0.0"))

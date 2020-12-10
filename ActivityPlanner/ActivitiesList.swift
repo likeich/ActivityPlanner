@@ -22,8 +22,12 @@ struct ActivitiesList: View {
                 }
                 .background(Color.green.opacity(0.5))
             }
-            Text("Old Activities")
-                .font(.title)
+            
+            if !passedActivities.isEmpty {
+                Text("Old Activities")
+                    .font(.title)
+            }
+            
             ForEach(passedActivities, id: \.self) { activity in
                 NavigationLink(destination: CDActivityDetails(activity: activity)) {
                     CDActivityListItem(activity: activity)

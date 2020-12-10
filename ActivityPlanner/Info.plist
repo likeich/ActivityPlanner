@@ -53,6 +53,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Activity Planner Needs camera access so you can save a photo.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Activity Planner Needs photo library access so you can save a photo.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

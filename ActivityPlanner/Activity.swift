@@ -21,7 +21,7 @@ public class Activity: NSManagedObject, Identifiable {
     @NSManaged public var date: Date?
     @NSManaged public var recreationAreaID: String?
     @NSManaged public var activityName: String?
-    
+    @NSManaged public var picture: Data?
     
 }
 
