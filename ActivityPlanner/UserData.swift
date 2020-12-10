@@ -39,6 +39,12 @@ final class UserData: ObservableObject {
         
         var recData: RecData
         recData = parseJsonFromURL(fullURL: url)
+        
+        if recData.data.isEmpty {
+                   print("Returning the first item")
+                   return recreationAreaList[0]
+               }
+        
         return recData.data[0]
     }
     

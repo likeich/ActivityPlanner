@@ -12,7 +12,7 @@ struct Budget: View {
 
     @EnvironmentObject var userData: UserData
     
-    @FetchRequest(fetchRequest: Activity.allActivityFetchRequest()) var allActivities: FetchedResults<Activity>
+    @FetchRequest(fetchRequest: Activity.allActivitiesFetchRequest()) var allActivities: FetchedResults<Activity>
     
     
     var body: some View {

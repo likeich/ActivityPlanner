@@ -33,7 +33,7 @@ struct Activities: View {
                         .foregroundColor(.white)
                         .cornerRadius(24.0)
                     
-                    Text("Upcoming Activities")
+                    NavigationLink("Upcoming Activities", destination: UpcomingActivities())
                         .font(.title)
                         .padding(5)
                         .padding(.horizontal, 20)

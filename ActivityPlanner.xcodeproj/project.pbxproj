@@ -16,6 +16,8 @@
 		57047DB52581794B00E9C749 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DB42581794B00E9C749 /* Pie.swift */; };
 		57047DBB258187B100E9C749 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 57047DBA258187B100E9C749 /* SwiftUICharts */; };
 		57047DBE258188C100E9C749 /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047DBD258188C100E9C749 /* temp.swift */; };
+		576866F62581A26A006113E8 /* CDActivityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576866F52581A26A006113E8 /* CDActivityDetails.swift */; };
+		576866F92581A2C6006113E8 /* CDActivityListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576866F82581A2C6006113E8 /* CDActivityListItem.swift */; };
 		F1391DBF2581240800980DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DBE2581240800980DCC /* AppDelegate.swift */; };
 		F1391DC12581240800980DCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DC02581240800980DCC /* SceneDelegate.swift */; };
 		F1391DC32581240800980DCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391DC22581240800980DCC /* ContentView.swift */; };
@@ -47,6 +49,8 @@
 		57047DAE2581791C00E9C749 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		57047DB42581794B00E9C749 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		57047DBD258188C100E9C749 /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
+		576866F52581A26A006113E8 /* CDActivityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDActivityDetails.swift; sourceTree = "<group>"; };
+		576866F82581A2C6006113E8 /* CDActivityListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDActivityListItem.swift; sourceTree = "<group>"; };
 		F1391DBB2581240800980DCC /* ActivityPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1391DBE2581240800980DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1391DC02581240800980DCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				F1391DCC2581240A00980DCC /* LaunchScreen.storyboard */,
 				F1391DCF2581240A00980DCC /* Info.plist */,
 				F1391DC92581240A00980DCC /* Preview Content */,
+				576866F52581A26A006113E8 /* CDActivityDetails.swift */,
+				576866F82581A2C6006113E8 /* CDActivityListItem.swift */,
 			);
 			path = ActivityPlanner;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				57047DA22581789E00E9C749 /* Settings.swift in Sources */,
 				F1391DBF2581240800980DCC /* AppDelegate.swift in Sources */,
 				F1391DC62581240800980DCC /* ActivityPlanner.xcdatamodeld in Sources */,
+				576866F62581A26A006113E8 /* CDActivityDetails.swift in Sources */,
 				F1391DF5258142AA00980DCC /* SearchRecreationAreas.swift in Sources */,
 				F1391DC12581240800980DCC /* SceneDelegate.swift in Sources */,
 				57047DB22581791C00E9C749 /* Main.swift in Sources */,
@@ -291,6 +298,7 @@
 				F1391DD82581244C00980DCC /* UtilityFunctions.swift in Sources */,
 				F1391DFB2581433100980DCC /* ParkListItem.swift in Sources */,
 				F1391DC32581240800980DCC /* ContentView.swift in Sources */,
+				576866F92581A2C6006113E8 /* CDActivityListItem.swift in Sources */,
 				57047DAF2581791C00E9C749 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
