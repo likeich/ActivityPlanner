@@ -152,7 +152,6 @@
 				F1391DEE2581418500980DCC /* CreateActivity.swift */,
 				F1391DF4258142AA00980DCC /* SearchRecreationAreas.swift */,
 				F1391DF7258142FA00980DCC /* RecreationAreaList.swift */,
-				F1391E222581A32C00980DCC /* ImagePicker.swift */,
 			);
 			name = OnlineFiles;
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 		F1391E1025817EC300980DCC /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				F1391E222581A32C00980DCC /* ImagePicker.swift */,
 				F1391E0025814B5400980DCC /* MapView.swift */,
 				F1391DD72581244C00980DCC /* UtilityFunctions.swift */,
 				F1391E1C25819CFF00980DCC /* CurrentLocation.swift */,
