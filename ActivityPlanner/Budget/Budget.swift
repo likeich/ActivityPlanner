@@ -18,8 +18,12 @@ struct Budget: View {
     var body: some View {
         NavigationView {
         
-        BarChartView(data: ChartData(values: [("Food",getPercentages()[0]), ("Shopping",getPercentages()[1]), ("Gas",getPercentages()[2]), ("Activities",getPercentages()[3])]), title: "Budget", legend: "Trip Cost Avg: \(String(getPercentages()[4])) (\(userData.currency))",  form: ChartForm.medium, dropShadow: false, cornerImage : Image(systemName: "cedisign.circle.fill"))
+        BarChartView(data: ChartData(values: [("Food",getPercentages()[0]), ("Shopping",getPercentages()[1]), ("Gas",getPercentages()[2]), ("Activities",getPercentages()[3])]), title: "Average Spending", legend: "Trip Cost Avg: \(String(getPercentages()[4])) (\(userData.currency))",  form: ChartForm.medium, dropShadow: false, cornerImage : Image(systemName: "cedisign.circle.fill"))
         }.navigationBarTitle(("Settings"), displayMode: .inline)
+        
+//        BarChartView(data: ChartData(values: [("Food",getPercentages()[0]), ("Shopping",10), ("Gas",100), ("Activities",45)]), title: "Budget", legend: "Trip Cost Avg: 500 (\(userData.currency))",  form: ChartForm.medium, dropShadow: false, cornerImage : Image(systemName: "cedisign.circle.fill"))
+//        }.navigationBarTitle(("Settings"), displayMode: .inline)
+
 
     }
     
@@ -29,23 +33,27 @@ struct Budget: View {
     }
     
     func getPercentages() -> [Double]{
-        var gas = 0.0
-        var food = 0.0
-        var shop = 0.0
-        var activ = 0.0
-        var total = 0.0
-        
+        var gas : Double = 0.0
+        var food : Double = 0.0
+        var shop : Double = 0.0
+        var activ : Double = 0.0
+        var total : Double = 0.0
+
         for act in allActivities {
             gas += Double(truncating: act.gasCost ?? 0)
             food += Double(truncating: act.foodCost ?? 0)
             shop += Double(truncating: act.shoppingCost ?? 0)
             activ += Double(truncating: act.activityCost ?? 0)
             total += Double(truncating: act.totalCost ?? 10000000)
+            
+            print(act.gasCost!)
+            print(act.foodCost!)
+            print(act.shoppingCost!)
         }
-        
-        return [food/total,shop/total, gas/total, activ/total, total/Double(allActivities.count)]
-        
-        
+
+        return [food/Double(allActivities.count),shop/Double(allActivities.count), gas/Double(allActivities.count), activ/Double(allActivities.count), total/Double(allActivities.count)]
+
+
     }
 
 }
