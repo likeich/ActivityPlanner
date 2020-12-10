@@ -107,7 +107,7 @@ struct SignUp: View {
                 } //end of section
                 
             }//end of form
-            .navigationBarTitle(Text("Settings"), displayMode: .inline)
+            .navigationBarTitle(Text("Sign Up"), displayMode: .inline)
             .font(.system(size: 14))
             .alert(isPresented: $badPasswordAlert, content: { self.notPassword })
             

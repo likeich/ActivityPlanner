@@ -50,12 +50,12 @@ final class UserData: ObservableObject {
     
     let securityQuestion = ["In what city or town did your mother and father meet?" , "In what city or town were you born?", "What did you want to be when you grew up?","What did you remember most from your childhood?", "What is the name of the boy or girl that you first kissed?", "What is the name of the first school you attended?", "What is the name of you favorite childhood friend?", "What is the name of your first pet?" , "What is your mother's maiden name?", "What was your favorite place to visit as a child?"]
     
-    var data = [
-        Pie(id: 0, percent: 10, name: "Apple", color: Color.yellow),
-        Pie(id: 1, percent: 15, name: "Banana", color: Color.blue),
-        Pie(id: 2, percent: 25, name: "Mango", color: Color.red),
-        Pie(id: 3, percent: 25, name: "Berry", color: Color.green),
-        Pie(id: 4, percent: 25, name: "Rambutan", color: Color.orange),
+    @Published var data = [
+        Pie(id: 0, percent: 10, name: "Food", color: Color.yellow),
+        Pie(id: 1, percent: 40, name: "Shopping", color: Color.blue),
+        Pie(id: 2, percent: 25, name: "Gas", color: Color.red),
+        Pie(id: 3, percent: 25, name: "Activity", color: Color.green),
+//        Pie(id: 4, percent: 25, name: "Rambutan", color: Color.orange),
         
     ]
     
@@ -131,7 +131,7 @@ final class UserData: ObservableObject {
                              userInfo: nil,
                              repeats: true)
     }
- 
+//
     public func stopTimer() {
         counter = 0
         slideShowTimer.invalidate()

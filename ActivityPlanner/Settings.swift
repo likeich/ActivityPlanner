@@ -140,7 +140,7 @@ struct Settings: View {
     
     private func inputCheck() {
         userData.currency = userData.currencies[selectedIndex]
-        if (!password.isEmpty || !samePassword.isEmpty) && !answer.isEmpty{
+        if (!password.isEmpty || !samePassword.isEmpty) && answer != "" {
             if password == samePassword {
                 UserDefaults.standard.set(self.password, forKey: "Password")
                 UserDefaults.standard.set(self.userData.securityQuestion[selectedIndex2], forKey: "securityQuestion")

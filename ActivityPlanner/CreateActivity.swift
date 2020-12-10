@@ -151,6 +151,52 @@ struct CreateActivity: View {
                     }
                 }
                 
+                Section(header: Text("Enter Food Cost")){
+                    HStack {
+                        TextField("", value: $foodCost, formatter: tripCostFormatter)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 300, height: 36)
+                            .padding(5)
+                    }
+                    .frame(minWidth: 300, maxWidth: 500)
+                }
+                Section(header: Text("Enter Activity Cost")){
+                    HStack {
+                        TextField("", value: $activityCost, formatter: tripCostFormatter)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 300, height: 36)
+                            .padding(5)
+                    }
+                    .frame(minWidth: 300, maxWidth: 500)
+                }
+                Section(header: Text("Enter Shopping Cost")){
+                    HStack {
+                        TextField("", value: $shoppingCost, formatter: tripCostFormatter)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 300, height: 36)
+                            .padding(5)
+                    }
+                    .frame(minWidth: 300, maxWidth: 500)
+                }
+                Section(header: Text("Enter Gas Cost")){
+                    HStack {
+                        TextField("", value: $gasCost, formatter: tripCostFormatter)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 300, height: 36)
+                            .padding(5)
+                    }
+                    .frame(minWidth: 300, maxWidth: 500)
+                }
+                Section(header: Text("Total Cost")){
+                    HStack {
+                        Text(String(self.foodCost + self.gasCost + shoppingCost + activityCost))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 300, height: 36)
+                            .padding(5)
+                    }
+                    .frame(minWidth: 300, maxWidth: 500)
+                }
+                
             }
         }
         .navigationBarTitle(Text("Create Activity"), displayMode: .inline)
@@ -170,7 +216,7 @@ struct CreateActivity: View {
         newActivity.recreationAreaID = searchedRecreationAreaList[recreationAreaIndex].parkCode
         newActivity.activityName = activityList[selectedIndex].name
         
-        newActivity.totalCost = NSNumber(value: self.totalCost)
+        newActivity.totalCost = NSNumber(value: self.foodCost + self.gasCost + shoppingCost + activityCost)
         newActivity.foodCost = NSNumber(value: self.foodCost)
         newActivity.gasCost = NSNumber(value: self.gasCost)
         newActivity.shoppingCost = NSNumber(value: self.shoppingCost)
