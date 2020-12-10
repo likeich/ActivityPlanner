@@ -29,6 +29,7 @@
 		F1391E0C2581686600980DCC /* ActivitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E0B2581686600980DCC /* ActivitiesList.swift */; };
 		F1391E1525817F7400980DCC /* CDActivityListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E1425817F7400980DCC /* CDActivityListItem.swift */; };
 		F1391E182581808F00980DCC /* CDActivityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E172581808F00980DCC /* CDActivityDetails.swift */; };
+		F1391E1D25819CFF00980DCC /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1391E1C25819CFF00980DCC /* CurrentLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		F1391E0B2581686600980DCC /* ActivitiesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesList.swift; sourceTree = "<group>"; };
 		F1391E1425817F7400980DCC /* CDActivityListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDActivityListItem.swift; sourceTree = "<group>"; };
 		F1391E172581808F00980DCC /* CDActivityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDActivityDetails.swift; sourceTree = "<group>"; };
+		F1391E1C25819CFF00980DCC /* CurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			children = (
 				F1391E0025814B5400980DCC /* MapView.swift */,
 				F1391DD72581244C00980DCC /* UtilityFunctions.swift */,
+				F1391E1C25819CFF00980DCC /* CurrentLocation.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				F1391DE22581249700980DCC /* ActivityStruct.swift in Sources */,
 				F1391E0C2581686600980DCC /* ActivitiesList.swift in Sources */,
 				F1391E182581808F00980DCC /* CDActivityDetails.swift in Sources */,
+				F1391E1D25819CFF00980DCC /* CurrentLocation.swift in Sources */,
 				F1391DFE258144A600980DCC /* ParkDetails.swift in Sources */,
 				F1391DF8258142FA00980DCC /* RecreationAreaList.swift in Sources */,
 				F1391DD82581244C00980DCC /* UtilityFunctions.swift in Sources */,
